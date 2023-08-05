@@ -1,0 +1,48 @@
+$ python manage.py startapp polls
+
+  polls/
+    __init__.py
+    admin.py
+    apps.py
+    migrations/
+        __init__.py
+    models.py
+    tests.py
+    views.py
+  _________________________________________________________________________________________________________
+  ______polls/vies.py
+  from django.http import HttpResponse
+
+
+def index(request):
+    return HttpResponse("Hello, world. You're at the polls index.")
+      _________________________________________________________________________________________________________
+      create a file called urls.py
+      
+      polls/
+    __init__.py
+    admin.py
+    apps.py
+    migrations/
+        __init__.py
+    models.py
+    tests.py
+    urls.py
+    views.py
+      __________________________________________________________________________________________________________
+      ______mysite/mysite/urls.py
+      from django.contrib import admin
+from django.urls import include, path
+
+urlpatterns = [
+    path('polls/', include('polls.urls')),
+    path('admin/', admin.site.urls),
+]
+
+
+
+______________________________________
+  $ python manage.py runserver
+
+  >>>
+  “Hello, world. You’re at the polls index.”,
